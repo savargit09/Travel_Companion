@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication Page</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('back_ground.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: flex;
+      align-items: center;
+      padding-left: 800px;
+    }
+
+    .auth-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #667eea;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #5567d3;
+    }
+
+    .toggle-text {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .toggle-text span {
+      color: #667eea;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+
+  <script type="module" src="register.js" defer></script>
+  <script type="module" src="login1.js" defer></script>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2 id="form-title">Login</h2>
+
+    <!-- Sign Up Form (hidden by default) -->
+    <form id="signup-form" style="display:none;">
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" id="signup-email" required>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Create a password" id="signup-password" required>
+      </div>
+      <button id="signup-submit" type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="login-form">
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" id="login-email" required>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" id="login-password" required>
+      </div>
+      <button id="login-submit" type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="toggle-text" id="toggle-text">
+      Don’t have an account? <span onclick="toggleForms()">Sign Up</span>
+    </p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const formTitle = document.getElementById("form-title");
+    const toggleText = document.getElementById("toggle-text");
+
+    function toggleForms() {
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+        formTitle.innerText = "Login";
+        toggleText.innerHTML = `Don’t have an account? <span onclick="toggleForms()">Sign Up</span>`;
+      } else {
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+        formTitle.innerText = "Sign Up";
+        toggleText.innerHTML = `Already have an account? <span onclick="toggleForms()">Login</span>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
