@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.weather-input {
+    width: 30%;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #141e30, #243b55); 
+    color: #fff;
+    padding: 1rem 2.5rem;
+}
+
+.weatherIcon {
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    display: block;
+    height: 25%;
+    margin: 2rem auto;
+}
+
+
+.input-group {
+    position: relative;   
+    margin-top: 30px;     
+}
+
+.input-group input {
+    background-color: antiquewhite;
+    text-transform: capitalize;
+    padding: 1rem;
+    font-size: 15px;
+    border-radius: 6px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.input-group .converter {
+    position: absolute;
+    top: 50%;             
+    transform: translateY(-50%);
+    right: 45px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.input-group .fa-search {
+    position: absolute;
+    top: 50%;             
+    transform: translateY(-50%);
+    right: 15px;
+    font-size: 22px;
+    color: gray;
+    cursor: pointer;
+}
+
+
+
+.weather-output {
+    width: 70%;
+    position: fixed;
+    inset: 0;
+    margin-left: 30%;
+    padding: 2rem;
+    background: lightskyblue; 
+    color: #fff;
+    overflow: auto;
+}
+
+.weather-input .feelsLike,
+.weather-input .description,
+.weather-input .date,
+.weather-input .city {
+    padding: 10px 0;
+}
+
+.temperature {
+    font-size: 5rem;
+    text-align: center;
+    display: flex;
+    font-weight: 300;
+}
+
+.temperature span {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.Highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);  
+    grid-auto-flow: row;
+    row-gap: 2rem;     
+    column-gap: 20px;  
+    justify-content: start; 
+}
+
+
+.Highlights div {
+    height: 230px;     
+    width: 320px;      
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #434343, #000000); 
+    color: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight:normal;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+}
+
+
+.Highlights div:nth-child(n+4) {
+    margin-left: 180px;   
+}
+
+.Highlights i {
+    font-size: 40px;
+    display: block;
+    text-align: right;
+    width: 67%;
+}
+
+.Highlights h1 {
+    font-size: 1.5rem;   
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sun span {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.description i {
+    font-size: 15px;
+}
+
+.heading {
+    margin: 1rem 0 2.5rem 0;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: black;
+}
